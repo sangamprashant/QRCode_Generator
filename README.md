@@ -13,4 +13,8 @@ The QR Code Generator is a simple web application that allows users to generate 
 - Error handling for empty input.
 
 ## Credits
-This project was created by sangamprashant.
+
+This project was created by [sangamprashant](https://github.com/sangamprashant).
+## Demo
+
+You can try the QR Code Generator here: [Demo Link](https://sangamprashant.github.io/QRCode_Generator).
