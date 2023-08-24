@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QR Code Generator</h1>
+      <div class="input-section">
+        <label for="text-input">Enter text or URL:</label>
+        <input type="text" id="qrText" placeholder="Enter text or URL" />
+        <button id="generate-button" onclick="generateQr()">
+          Generate QR Code
+        </button>
+        <button id="clear-button" onclick="clearText()">Clear Text</button>
+      </div>
+      <div id="qrBox" class="qr-code-section">
+        <img id="qrImage" src="" />
+      </div>
+    </div>
+    <script>
+      let qrBox = document.getElementById("qrBox");
+      let qrImage = document.getElementById("qrImage");
+      let qrText = document.getElementById("qrText");
+      function generateQr() {
+        //check empty or not
+        if (qrText.value.length > 0) {
+          qrImage.src =
+            "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" +
+            qrText.value; //add value to link
+        } else {
+          alert("Please enter text or a URL before generating a QR code."); //alert
+        }
+      }
+      function clearText() {
+        if (qrText.value.length > 0) {
+          qrText.value = ""; // Clear the input field
+          qrImage.src = ""; // Clear the QR code image
+        } else {
+          alert("Nothing to clear."); //alert
+        }
+      }
+    </script>
+  </body>
+</html>
